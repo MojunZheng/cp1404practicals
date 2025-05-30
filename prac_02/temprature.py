@@ -20,3 +20,8 @@ def main():
         print(MENU)
         choice = input(">>> ").upper()
     print("Thank you.")
+
+def calculate_celsius(fahrenheit):
+    """calculate from fahrenheit to celsius"""
+    celsius = 5 / 9 * (fahrenheit - 32)
+    return celsius
