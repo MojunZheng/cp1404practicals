@@ -26,3 +26,9 @@ def main():
         choice = input("Choose：").upper()
     print("Bye")
 
+def validate_score():
+    """validate user input"""
+    score = float(input("Enter your score:"))
+    while score < 0 or score > 100:
+        score = float(input("Enter your score:"))
+    return score
