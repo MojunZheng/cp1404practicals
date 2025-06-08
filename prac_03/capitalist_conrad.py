@@ -16,3 +16,6 @@ MIN_PRICE = 1
 MAX_PRICE = 100
 INITIAL_PRICE = 10.0
 
+price = INITIAL_PRICE
+print(f"${price:,.2f}")
+days = 0
