@@ -21,3 +21,8 @@ print(f"${price:,.2f}")
 days = 0
 
 while MIN_PRICE <= price <= MAX_PRICE:
+    price_change = 0
+    if random.randint(1, 2) == 1:
+        price_change = random.uniform(0, MAX_INCREASE)
+    else:
+        price_change = random.uniform(-MAX_DECREASE, 0)
