@@ -29,3 +29,7 @@ while MIN_PRICE <= price <= MAX_PRICE:
     price *= (1 + price_change)
     days += 1
     print(f"On day {days} price is ${price:,.2f}")
+
+    with open(FILE_NAME, "a") as out_file:
+        out_file.write(f"{price}\n")
+
