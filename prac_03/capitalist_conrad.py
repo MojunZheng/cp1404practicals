@@ -26,3 +26,6 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(0, MAX_INCREASE)
     else:
         price_change = random.uniform(-MAX_DECREASE, 0)
+    price *= (1 + price_change)
+    days += 1
+    print(f"On day {days} price is ${price:,.2f}")
