@@ -15,3 +15,7 @@ while not fraction:
         fraction = numerator / denominator
         print(fraction)
         fraction = True
+    except ValueError:
+        print("Numerator and denominator must be valid numbers!")
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
