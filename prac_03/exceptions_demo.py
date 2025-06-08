@@ -7,3 +7,11 @@ Answer the following questions:
     When denominator is zero
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
 """
+fraction = False
+while not fraction:
+    try:
+        numerator = int(input("Enter the numerator: "))
+        denominator = int(input("Enter the denominator: "))
+        fraction = numerator / denominator
+        print(fraction)
+        fraction = True
