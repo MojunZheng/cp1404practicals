@@ -19,3 +19,5 @@ INITIAL_PRICE = 10.0
 price = INITIAL_PRICE
 print(f"${price:,.2f}")
 days = 0
+
+while MIN_PRICE <= price <= MAX_PRICE:
