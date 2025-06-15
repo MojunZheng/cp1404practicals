@@ -32,3 +32,11 @@ print(numbers)
 
 greater_numbers = [number_greater for number_greater in numbers if number_greater > 9]
 print(greater_numbers)
+
+last_names = []
+long_names = [l_name for l_name in full_names if len(l_name) > 11]
+for full_name in long_names:
+    name_parts = full_name.split()
+    last_name = name_parts[-1]
+    last_names.append(last_name)
+print(" ".join(last_names))
