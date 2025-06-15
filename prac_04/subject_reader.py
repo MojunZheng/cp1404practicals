@@ -23,3 +23,11 @@ def load_data():
     input_file.close()
     return datas
 
+def display_data(datas):
+    for i in datas:
+        course, name, number = i
+        print(f"{course:<6} is taught by {name:<12} and has {number:<3} students")
+
+
+
+main()
