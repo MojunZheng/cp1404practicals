@@ -20,3 +20,7 @@ print(full_initials)
 a_names = [name for name in names if name.startswith('A')]
 print(a_names)
 
+print(" ".join(sorted(names)))
+
+lowercase_full_names = [name.lower() for name in full_names]
+print(lowercase_full_names)
