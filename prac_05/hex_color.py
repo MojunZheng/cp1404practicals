@@ -4,3 +4,7 @@ HEX_COLORS = {"alice blue": "#f0f8ff", "barn red": "#7c0a02", "blanched almond":
 length_of_color = max(len(i) for i in HEX_COLORS)
 for code in HEX_COLORS:
     print(f"{code:{length_of_color}} is {HEX_COLORS[code]}")
+color = input("Choose a color:").lower()
+while color != "":
+    try:
+        print(HEX_COLORS[color])
