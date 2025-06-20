@@ -35,3 +35,4 @@ def count_champions(wimbledon_winners):
         except KeyError:
             dict_champions[name] = 1
     return dict_champions, sorted(countries)
+main()
