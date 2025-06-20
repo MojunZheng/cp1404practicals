@@ -8,3 +8,7 @@ color = input("Choose a color:").lower()
 while color != "":
     try:
         print(HEX_COLORS[color])
+    except KeyError:
+        print("Invalid input")
+    color = input("Choose a color:").lower()
+print("Finished")
