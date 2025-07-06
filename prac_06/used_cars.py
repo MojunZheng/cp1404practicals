@@ -18,3 +18,6 @@ def main():
     print(f"{limo.name} has fuel: {limo.fuel}")
     limo.drive(115)
     print(limo)
+
+if __name__ == '__main__':
+    main()
