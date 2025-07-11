@@ -137,3 +137,33 @@ def update_project(projects):
     projects[choice].percentage = new_percentage
     projects[choice].priority = new_priority
 
+
+def get_valid_number(user_input, projects, data_type):
+    """Get valid input number"""
+    is_valid = False
+    while not is_valid:
+        try:
+            user_input_to_validate = float(input(user_input))
+            if user_input_to_validate < MINIMUM_PERCENTAGE:  # determine whether the user input is bigger than 0
+                print("Numbers must be > 0")
+            else:
+                if user_input_to_validate >= len(projects) and data_type == "project_number":
+                    print("Invalid project number")
+                elif user_input_to_validate > MAXIMUM_PERCENTAGE and data_type == "percentage":
+                    print("Invalid percentage")
+                else:
+                    return user_input_to_validate
+        except ValueError:
+            print("Invalid input")
+
+
+def get_valid_string(user_input):
+    """Get valid input string"""
+    string = input(user_input)
+    while string == "":
+        print("Invalid input")
+        string = input(user_input)
+    return string
+
+
+main()
