@@ -36,3 +36,14 @@ def main():
     # Loop through and display all languages (using their str method)
     for language in languages:
         print(language)
+
+def using_csv():
+    """Language file reader version using the csv module."""
+    # First, open the file for reading - note: specify newline
+    # to avoid quoted \n in strings being considered a new record
+    in_file = open('languages.csv', 'r', newline='')
+    in_file.readline()
+    reader = csv.reader(in_file)  # use default dialect, Excel
+    for row in reader:
+        print(row)
+    in_file.close()
