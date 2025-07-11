@@ -79,3 +79,61 @@ def save_projects(projects, file_name):
         for project in projects:
             print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost_estimate}\t{project.percentage}", file = new_file)
     print(f"{len(projects)} projects saved to {file_name}")
+
+def display_projects(projects):
+    """Display all projects"""
+    incomplete = [project for project in projects if not project.is_completed()]
+    complete = [project for project in projects if project.is_completed()]    # uses list comprehension to determine and add complete or incomplete project to different list
+
+    if incomplete:
+        print("Incomplete projects:")
+        for project in sorted(incomplete):
+            print(project)
+    else:
+        print("No incomplete projects.")
+
+    if complete:
+        print("Completed projects:")
+        for project in sorted(complete):
+            print(project)
+    else:
+        print("No completed projects.")
+
+
+def filter_projects(projects):
+    """Fileter projects by time"""
+    projects_to_filter = projects
+    input_date = input("Show projects that start after date (dd/mm/yy):")
+    date = datetime.datetime.strptime(input_date, "%d/%m/%Y").date()  # use datetime to input date
+    projects_to_filter.sort()
+    for project in projects_to_filter:
+        date1 = datetime.datetime.strptime(project.start_date, "%d/%m/%Y").date()
+        if date1 >= date:
+            print(project)
+
+
+def add_project(projects):
+    """Add new projects to the list"""
+    print("Let's add a new project")
+    name = get_valid_string("Name:")
+    start_date = input("Start date (dd/mm/yy):")
+    priority = int(get_valid_number("Priority:", projects, "priority"))
+    cost_estimate = get_valid_number("Cost estimate: $", projects, "cost")
+    percentage = int(get_valid_number("Percentage:", projects, "percentage"))
+    project = Project(name, start_date, priority, cost_estimate, percentage)
+    projects.append(project)
+
+
+def update_project(projects):
+    """Update priority and percentage of project"""
+    for index, project in enumerate(projects):
+        print(index, project)
+
+    choice = int(get_valid_number("Project choice:", projects, "project_number"))
+    print(projects[choice])
+
+    new_percentage = int(get_valid_number("New Percentage:", projects, "percentage"))
+    new_priority = int(get_valid_number("New Priority:", projects, "priority"))
+    projects[choice].percentage = new_percentage
+    projects[choice].priority = new_priority
+
