@@ -15,3 +15,6 @@ class Project:
 
     def is_completed(self):
         return self.percentage == MAXIMUM_PERCENTAGE
+
+def __lt__(self, other):
+    return self.priority <= other.priority
