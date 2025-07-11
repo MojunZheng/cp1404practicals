@@ -39,3 +39,43 @@ def main():
     if save_option == "y":
         save_projects(projects, FILE_NAME)
     print("Thank you for using custom-built project management software.")
+
+
+def read_file(file_name):
+    """Reads project data from projects CSV file"""
+    projects = []
+    with open(file_name, "r") as projects_information:
+        projects_information.readline()
+        for line in projects_information:
+            parts = line.strip().split("\t")
+            project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))  # use Project class to install project data to the list
+            projects.append(project)
+        print(f"Loaded {len(projects)} projects from {file_name}")
+    return projects
+
+
+def load_file(input_name):
+    """Load specified file or default file"""
+    file_name = input(input_name)
+    try:
+        read_file(file_name)
+    except FileNotFoundError:
+        print(f"File not found, open default file--{FILE_NAME}")
+        read_file(FILE_NAME)
+
+
+def get_file_name(projects):
+    """Get specified file name"""
+    user_input_name = input("Input name:")
+    if not user_input_name.endswith(".txt"):
+        user_input_name += ".txt"
+    save_projects(projects, user_input_name)
+
+
+def save_projects(projects, file_name):
+    """Save projects to specified file"""
+    with open(file_name, 'w') as new_file:
+        print("Name	Start Date	Priority	Cost Estimate	Completion Percentage", file=new_file)
+        for project in projects:
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost_estimate}\t{project.percentage}", file = new_file)
+    print(f"{len(projects)} projects saved to {file_name}")
