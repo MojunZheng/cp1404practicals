@@ -71,3 +71,5 @@ def using_csv_namedtuple():
     for language in map(Language._make, csv.reader(in_file)):
         print(language.name, 'was released in', language.year, "has pointer arithmetic?", language.pointer)
         print(repr(language))
+
+using_csv_namedtuple()
