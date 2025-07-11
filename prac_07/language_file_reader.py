@@ -47,3 +47,18 @@ def using_csv():
     for row in reader:
         print(row)
     in_file.close()
+
+def using_namedtuple():
+    """Language file reader version using a named tuple."""
+    in_file = open('languages.csv', 'r', newline='')
+    file_field_names = in_file.readline().strip().split(',')
+    print(file_field_names)
+    # Language will be a new subclass of the tuple data type class
+    Language = namedtuple('Language', 'name, typing, reflection, year, pointer')
+    reader = csv.reader(in_file)  # use default dialect, Excel
+
+    for row in reader:
+        # print(row)
+        language = Language._make(row)
+        print(repr(language))
+    in_file.close()
