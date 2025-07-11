@@ -28,3 +28,14 @@ class ProgrammingLanguage:
     def is_pointer(self):
         """Determine if language has pointer arithmetic"""
         return self.pointer == "Yes"
+
+def run_tests():
+    """Run simple tests/demos on ProgrammingLanguage class."""
+    languages = []
+    Language = namedtuple('Language', 'name, typing, reflection, year, pointer')
+    in_file = open("languages.csv", "r")
+    in_file.readline()
+    for language in map(Language._make, csv.reader(in_file)):
+        programming_language = ProgrammingLanguage(language.name, language.typing, language.reflection, language.year, language.pointer)
+        languages.append(programming_language)
+    in_file.close()
