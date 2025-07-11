@@ -44,3 +44,10 @@ def run_tests():
     for language in languages:
         if language.is_dynamic():
             print(language.name)
+
+    print("The languages has Pointer Arithmetic:")
+    for p_language in languages:
+        if p_language.is_pointer():
+            print(p_language.name)
+if __name__ == "__main__":
+    run_tests()
