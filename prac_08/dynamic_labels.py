@@ -22,3 +22,4 @@ class DynamicLabelsApp(App):
             temp_label = Label(text=name)
             temp_label.color = (1,0,1,1)
             self.root.ids.main.add_widget(temp_label)
+DynamicLabelsApp().run()
