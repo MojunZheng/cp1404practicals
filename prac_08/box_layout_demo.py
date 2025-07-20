@@ -18,3 +18,10 @@ class BoxLayoutDemo(App):
         """handle greet(could be a button or other call), output greet to label"""
         name = self.root.ids.input_name.text
         self.root.ids.output_label.text = f"Hello {name}"
+    def handle_clear(self):
+        """handle clear(could be a button or other call), clear text in input box and output label"""
+        self.root.ids.input_name.text = ''
+        self.root.ids.output_label.text = 'Enter your name'
+
+
+BoxLayoutDemo().run()
