@@ -56,3 +56,10 @@ class EvenTree(Tree):
         Tree.grow(self, sunlight, water)
         while self._number_of_leaves % 3 != 0:
             self._number_of_leaves += 1
+class UpsideDownTree(Tree):
+    """Represent an upside-down tree; like a normal tree, but upside-down."""
+
+    def __str__(self):
+        """Return a string representation of the full tree,
+        upside-down compared to a normal tree."""
+        return self.get_ascii_trunk() + self.get_ascii_leaves()
