@@ -55,3 +55,4 @@ def display_taxis(taxis):
     """Display numbered list of taxis."""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
+main()
