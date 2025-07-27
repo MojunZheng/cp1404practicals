@@ -74,3 +74,13 @@ class WideTree(Tree):
 class QuickTree(Tree):
     """Represent a tree that grows more quickly."""
     pass
+class FruitTree(Tree):
+    """Represent a tree that has fruit as well as leaves, e.g.
+.
+...
+##
+###
+###
+ |
+ |  """
+    pass
