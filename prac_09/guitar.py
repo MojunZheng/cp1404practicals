@@ -24,3 +24,6 @@ def get_age(self):
 def is_vintage(self):
     """Determine if a Guitar is considered vintage or not based on age."""
     return self.get_age() >= VINTAGE_AGE
+def __lt__(self, other):
+    """Less than, used for sorting Guitars - by year released."""
+    return self.year < other.year
