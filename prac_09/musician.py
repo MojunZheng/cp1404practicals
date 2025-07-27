@@ -15,3 +15,8 @@ def __repr__(self):
 def add(self, instrument):
     """Add an instrument to musician's collection."""
     self.instruments.append(instrument)
+def play(self):
+    """Return a string showing the instrument playing their first (or no) instrument."""
+    if not self.instruments:
+        return f"{self.name} needs an instrument!"
+    return f"{self.name} is playing: {self.instruments[0]}"
