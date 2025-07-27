@@ -48,3 +48,11 @@ class Tree:
         Randomly increase the leaves by a number between 0 and sunlight."""
         self._trunk_height += random.randint(0, water)
         self._number_of_leaves += random.randint(0, sunlight)
+class EvenTree(Tree):
+    """ represent an even tree, one that only grows leaves in full rows """
+
+    def grow(self, sunlight, water):
+        """Grow like a normal tree, but fill out each row of leaves."""
+        Tree.grow(self, sunlight, water)
+        while self._number_of_leaves % 3 != 0:
+            self._number_of_leaves += 1
