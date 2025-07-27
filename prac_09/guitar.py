@@ -18,3 +18,6 @@ def __str__(self):
 def __repr__(self):
     """Return a string representation of a Guitar."""
     return str(self)
+def get_age(self):
+    """Get the age of a guitar based on the CURRENT_YEAR."""
+    return CURRENT_YEAR - self.year
