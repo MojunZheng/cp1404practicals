@@ -71,3 +71,6 @@ class WideTree(Tree):
    ||
    ||  """
     pass
+class QuickTree(Tree):
+    """Represent a tree that grows more quickly."""
+    pass
