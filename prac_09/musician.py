@@ -12,3 +12,6 @@ def __str__(self):
 def __repr__(self):
     """Return a string representation of a Musician, showing the variables."""
     return str(vars(self))
+def add(self, instrument):
+    """Add an instrument to musician's collection."""
+    self.instruments.append(instrument)
