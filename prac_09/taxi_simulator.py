@@ -37,3 +37,16 @@ def get_valid_taxi_choice(taxis, taxi_choice):
         return taxis[taxi_choice]
     except IndexError:
         print("Invalid taxi choice")
+def drive_taxi(current_taxi):
+    """Drive a taxi and calculate the price"""
+    if current_taxi:
+        current_taxi.start_fare()
+        distance_to_drive = float(input("Drive how far? "))
+        current_taxi.drive(distance_to_drive)
+        trip_cost = current_taxi.get_fare()
+        print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+        return trip_cost
+    else:
+        print("You need to choose a taxi before you can drive")
+        return 0
+main()
