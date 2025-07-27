@@ -63,3 +63,11 @@ class UpsideDownTree(Tree):
         """Return a string representation of the full tree,
         upside-down compared to a normal tree."""
         return self.get_ascii_trunk() + self.get_ascii_leaves()
+class WideTree(Tree):
+    """Represent a wide tree: grows twice as wide as a normal tree, e.g.
+ #####
+ ######
+ ######
+   ||
+   ||  """
+    pass
