@@ -3,6 +3,7 @@ from band import Band
 from musician import Musician
 from guitar import Guitar
 
+
 def main():
     band = Band("Extreme")
     nuno = Musician("Nuno Bettencourt")
@@ -20,3 +21,6 @@ def main():
     print(band)
     print("band.play()")
     print(band.play())
+
+
+main()
