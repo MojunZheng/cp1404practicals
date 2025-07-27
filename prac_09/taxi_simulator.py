@@ -31,3 +31,9 @@ def display_taxis(taxis):
     """Display numbered list of taxis."""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
+def get_valid_taxi_choice(taxis, taxi_choice):
+    """Get valid choice number"""
+    try:
+        return taxis[taxi_choice]
+    except IndexError:
+        print("Invalid taxi choice")
