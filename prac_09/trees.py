@@ -84,3 +84,12 @@ class FruitTree(Tree):
  |
  |  """
     pass
+class PineTree(Tree):
+    """Represent a pine tree, e.g.
+   *
+  ***
+ *****
+*******
+   |
+   |    """
+    pass
