@@ -58,3 +58,5 @@ def run_tests():
 
 
 run_tests()
+# Run doctests
+doctest.testmod()
