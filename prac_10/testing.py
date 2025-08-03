@@ -37,3 +37,24 @@ def phrase_to_sentence(phrase):
     if not phrase.endswith("."):
         phrase += "."
     return phrase
+def run_tests():
+    """Run the tests on the functions."""
+    # assert test with no message - used to see if the function works properly
+    assert repeat_string("Python", 1) == "Python"
+    # the test below should now pass
+    assert repeat_string("hi", 2) == "hi hi"
+
+    # assert test with custom message,
+    # used to see if Car's init method sets the odometer correctly
+    car = Car()
+    assert car._odometer == 0, "Car does not set odometer correctly"
+
+    # assert statements to check Car fuel
+    car_default = Car()
+    assert car_default.fuel == 0, "Car default fuel is not 0"
+
+    car_custom = Car(fuel=10)
+    assert car_custom.fuel == 10, "Car custom fuel is not set correctly"
+
+
+run_tests()
