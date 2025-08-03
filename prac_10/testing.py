@@ -60,3 +60,9 @@ def run_tests():
 run_tests()
 # Run doctests
 doctest.testmod()
+def main():
+    print("=== Wikipedia Search ===")
+    search_wiki()
+
+if __name__ == "__main__":
+    main()
